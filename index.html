@@ -26,6 +26,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="jumbotron">
       <h1 class="display-3">Weather Finder</h1>
@@ -33,25 +34,86 @@
       <hr class="my-2" />
       <p>Search for a city in the box below</p>
     </div>
-    <div class="container-fluid">
-      <div class="col-3" id="searchArea">
-        <div class="form-inline">
-          <label for="City"></label>
-          <input
-            type="text"
-            class="form-control"
-            name="city"
-            id="city"
-            aria-describedby="helpId"
-            placeholder="Enter the city name here"
-          />
-          <button type="submit" class="btn btn-primary my-1">
-            <i class="fas fa-search"></i>
-          </button>
+    <div class="container">
+      <div class="row">
+        <div class="col-4" id="searchArea">
+          <div class="form-inline">
+            <label for="City"></label>
+            <input
+              type="text"
+              class="form-control"
+              name="city"
+              id="city"
+              aria-describedby="helpId"
+              placeholder="Enter the city name here"
+            />
+            <button type="submit" class="btn btn-primary my-1">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <div class="list-group" id="prevSearch">
+            <button
+              type="button"
+              class="list-group-item list-group-item-action active"
+            >
+              Active item
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              Item
+            </button>
+            <button
+              type="button"
+              class="list-group-item list-group-item-action disabled"
+            >
+              Disabled item
+            </button>
+          </div>
         </div>
-      </div>
-      <div class="col-9" id="weatherArea"></div>
-    </div>
+        <div class="col-8" id="weatherArea">
+          <div id="currentConditions" class="border">Current conditions go here</div>
+          <h1>Five Day Forecast</h1>
+          <div class="d-flex flex-row" id="forecast">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <h5 class="card-title">Primary card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <h5 class="card-title">Primary card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <h5 class="card-title">Primary card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <h5 class="card-title">Primary card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <h5 class="card-title">Primary card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+          </div>
+         </div>       
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
