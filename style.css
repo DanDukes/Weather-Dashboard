@@ -11,7 +11,3 @@ body {
   border-radius: 0;
   border-bottom: 10px solid black;
 }
-
-#currentConditions {
-  height: 50%;
-}
