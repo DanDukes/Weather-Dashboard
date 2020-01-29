@@ -1,2 +1,2 @@
-# homework_6
+# Weather Dashboard
 Weather Dashboard using external API calls.
