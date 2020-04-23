@@ -1,5 +1,5 @@
 # Weather Dashboard
-[Deployed Link](https://dandukes.github.io/Weather-Dashboard/index.html)
+[Deployed Link](https://dandukes.github.io/Weather-Dashboard/)
 
 [Github Repo](https://github.com/DanDukes/Weather-Dashboard)
 
