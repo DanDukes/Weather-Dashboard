@@ -41,16 +41,12 @@ $(document).ready(function() {
         "&appid=adfa30d28992b81767460464c73f76b5&units=imperial",
       dataType: "json",
       success: (data) => {
-        // overwrite any existing content with title and empty row
         $("#forecast")
           .html('<h4 class="mt-3 bg-secondary">5-Day Forecast:</h4>')
           .append('<div class="row bg-secondary">');
 
-        // loop over all forecasts (by 3-hour increments)
         for (let i = 0; i < data.list.length; i++) {
-          // only look at forecasts around 3:00pm
           if (data.list[i].dt_txt.indexOf("15:00:00") !== -1) {
-            // create html elements for a bootstrap card
             let col = $("<div>").addClass("col-md-2");
             let card = $("<div>").addClass("card bg-info text-white");
             let body = $("<div>").addClass("card-body p-2");
@@ -73,7 +69,6 @@ $(document).ready(function() {
               .addClass("card-text")
               .text("Humidity: " + data.list[i].main.humidity + "%");
 
-            // merge together and put on page
             col.append(card.append(body.append(title, img, p1, p2)));
             $("#forecast .row").append(col);
           }
@@ -124,6 +119,7 @@ $(document).ready(function() {
         "&appid=adfa30d28992b81767460464c73f76b5&units=imperial",
       dataType: "json",
       success: (data) => {
+        console.log(data);
         if (history.indexOf(searchValue) === -1) {
           history.push(searchValue);
           window.localStorage.setItem("history", JSON.stringify(history));
@@ -134,6 +130,9 @@ $(document).ready(function() {
         let title = $("<h3>")
           .addClass("card-title bg-info")
           .text(data.name + " (" + new Date().toLocaleDateString() + ")");
+        let conditions = $("<h5>")
+        .addClass("card-title bg-info")
+        .text("Condition: " + data.weather[0].main);
         let card = $("<div>").addClass("card");
         let wind = $("<p>")
           .addClass("card-text")
@@ -144,19 +143,26 @@ $(document).ready(function() {
         let temp = $("<p>")
           .addClass("card-text")
           .text("Temperature: " + data.main.temp + " °F");
+        let feelsLike = $("<p>")
+          .addClass("card-text")
+          .text("Feels Like: " + data.main.feels_like + " °F");
+        let max = $("<p>")
+          .addClass("card-text")
+          .text("Today's High: " + data.main.temp_max + " °F");
+        let min = $("<p>")
+          .addClass("card-text")
+          .text("Today's Low: " + data.main.temp_min + " °F");
         let cardBody = $("<div>").addClass("card-body bg-info");
         let img = $("<img>").attr(
           "src",
           "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png"
         );
 
-        // merge and add to page
         title.append(img);
-        cardBody.append(title, temp, humid, wind);
+        cardBody.append(title, conditions, temp, feelsLike, max, min, humid, wind);
         card.append(cardBody);
         $("#today").append(card);
 
-        // call follow-up api endpoints
         getForecast(searchValue);
         getUVIndex(data.coord.lat, data.coord.lon);
       }
