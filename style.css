@@ -4,3 +4,16 @@ body {
   line-height: 1;
   height: 100vh;
 }
+
+.bg-dark {
+  background-color: #4362bf!important;
+}
+
+.bg-info {
+  background-color: #b3966b!important;
+}
+
+.bg-secondary {
+  background-color: #ffd699!important;
+  padding-bottom: 10px;
+}
