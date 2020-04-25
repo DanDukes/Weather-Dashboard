@@ -155,7 +155,7 @@ $(document).ready(function() {
         let cardBody = $("<div>").addClass("card-body bg-info");
         let img = $("<img>").attr(
           "src",
-          "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png"
+          "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"
         );
 
         title.append(img);
