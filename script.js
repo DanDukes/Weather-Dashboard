@@ -36,7 +36,7 @@ $(document).ready(function() {
     $.ajax({
       type: "GET",
       url:
-        "http://api.openweathermap.org/data/2.5/forecast?q=" +
+        "https://api.openweathermap.org/data/2.5/forecast?q=" +
         searchValue +
         "&appid=adfa30d28992b81767460464c73f76b5&units=imperial",
       dataType: "json",
@@ -81,7 +81,7 @@ $(document).ready(function() {
     $.ajax({
       type: "GET",
       url:
-        "http://api.openweathermap.org/data/2.5/uvi?appid=adfa30d28992b81767460464c73f76b5&lat=" +
+        "https://api.openweathermap.org/data/2.5/uvi?appid=adfa30d28992b81767460464c73f76b5&lat=" +
         lat +
         "&lon=" +
         lon,
@@ -114,7 +114,7 @@ $(document).ready(function() {
     $.ajax({
       type: "GET",
       url:
-        "http://api.openweathermap.org/data/2.5/weather?q=" +
+        "https://api.openweathermap.org/data/2.5/weather?q=" +
         searchValue +
         "&appid=adfa30d28992b81767460464c73f76b5&units=imperial",
       dataType: "json",
